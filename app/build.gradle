@@ -1,19 +1,4 @@
-buildscript {
-    repositories {
-        maven { url 'https://maven.fabric.io/repo' }
-    }
-
-    dependencies {
-        classpath 'io.fabric.tools:gradle:1.+'
-    }
-}
 apply plugin: 'com.android.application'
-apply plugin: 'io.fabric'
-
-repositories {
-    maven { url 'https://maven.fabric.io/repo' }
-}
-
 
 android {
     compileSdkVersion 19
@@ -33,10 +18,6 @@ android {
         }
     }
 }
-
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile('com.crashlytics.sdk.android:crashlytics:2.0.1@aar') {
-        transitive = true;
-    }
+    compile fileTree(include: ['*.jar'], dir: 'libs')
 }
